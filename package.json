@@ -1,0 +1,62 @@
+{
+  "name": "contentful-rich-text-react-native",
+  "version": "0.1.0",
+  "description": "React Native renderer for Contentful rich text fields.",
+  "main": "src/index.js",
+  "keywords": [
+    "react-native",
+    "reactjs",
+    "reactnative",
+    "contentful"
+  ],
+  "scripts": {
+    "build": "rm -rf build; webpack",
+    "test": "jest",
+    "test:update": "jest -u",
+    "test:ci": "jest --runInBand",
+    "test:watch": "jest --watch",
+    "lint": "eslint src",
+    "prettify": "prettier --single-quote --trailing-comma=es5 --write './**/*.md'",
+    "clean-install": "rm -rf node_modules && yarn"
+  },
+  "author": "Keith Brewster <keith.brewster22@gmail.com> (https://brewcodes.com)",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "^16.8.6",
+    "react-native": "^0.59.8"
+  },
+  "devDependencies": {
+    "@babel/cli": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
+    "@babel/preset-react": "7.0.0",
+    "enzyme": "3.10.0",
+    "enzyme-adapter-react-16": "1.14.0",
+    "enzyme-to-json": "3.3.5",
+    "eslint": "5.16.0",
+    "eslint-plugin-react": "7.13.0",
+    "eslint-plugin-react-native": "3.7.0",
+    "husky": "2.3.0",
+    "jest": "24.8.0",
+    "lint-staged": "8.1.7",
+    "prettier": "1.17.1",
+    "react": "16.8.6",
+    "react-dom": "16.8.6",
+    "react-native": "0.59.8"
+  },
+  "lint-staged": {
+    "src/**/*.js": [
+      "eslint --fix src",
+      "git add",
+      "jest --bail --findRelatedTests"
+    ],
+    "**/*.md": [
+      "prettier --single-quote --trailing-comma=es5 --write"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
